@@ -5,13 +5,18 @@ public interface List<T> {
 
 	public void insertLast(T data);
 
+	void insertAt(int index, T data);
+
 	public void deleteFirst();
 
 	public void deleteLast();
 
+	void deleteAt(int index);
+
 	public T get(int index);
 
 	public int size();
-	
+
 	public void print();
+
 }

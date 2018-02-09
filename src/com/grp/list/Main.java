@@ -17,6 +17,14 @@ public class Main {
 		list.insertLast(sc.nextInt());
 	}
 
+	private void insertAt() {
+		System.out.println("Enter integer index value");
+		int index = sc.nextInt();
+		System.out.println("Enter integer data to insert");
+		int value = sc.nextInt();
+		list.insertAt(index, value);
+	}
+
 	private void deleteFirst() {
 		list.deleteFirst();
 	}
@@ -41,8 +49,8 @@ public class Main {
 	public static void main(String[] args) {
 		Main main = new Main();
 		while (true) {
-			System.out.println("1. For insert first\n2. For insert last\n3. For delete first\n4."
-					+ " For delete last\n5. For get by index\n6. For size\n7. Print all data\n8. Any key to exit");
+			System.out.println("\n1. For insert first\n2. For insert last\n3. For delete first\n4."
+					+ " For delete last\n5. For get by index\n6. For size\n7. Print all data\n8.To insert at given index\n.9 Any key to exit");
 			int option = sc.nextInt();
 			switch (option) {
 			case 1:
@@ -66,7 +74,11 @@ public class Main {
 			case 7:
 				main.print();
 				break;
+			case 8:
+				main.insertAt();
+				break;
 			default:
+				System.out.println("Closing application...");
 				System.exit(0);
 			}
 		}

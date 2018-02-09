@@ -34,6 +34,33 @@ public class SLList<T> implements List<T> {
 	}
 
 	@Override
+	public void insertAt(int index, T data) {
+		if (index > size) {
+			return;
+		}
+		if (index == 0) {
+			insertFisrt(data);
+		} else if (index == size) {
+			insertLast(data);
+		} else {
+			int i = -1;
+			SLNode<T> current = head;
+			SLNode<T> node = new SLNode<>(data);
+			while (current.getNext() != null) {
+				i++;
+				if (i == index - 1) {
+					node.setNext(current.getNext());
+					current.setNext(node);
+					break;
+				} else {
+					current = current.getNext();
+				}
+			}
+		}
+		size++;
+	}
+
+	@Override
 	public void deleteFirst() {
 		if (head == null) {
 			return;
@@ -56,6 +83,11 @@ public class SLList<T> implements List<T> {
 		} while (ahead != null && ahead.getNext() != null);
 		current.setNext(null);
 		size--;
+	}
+
+	@Override
+	public void deleteAt(int index) {
+
 	}
 
 	@Override
