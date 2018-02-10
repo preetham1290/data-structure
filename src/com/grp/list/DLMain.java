@@ -2,10 +2,10 @@ package com.grp.list;
 
 import java.util.Scanner;
 
-public class Main {
+public class DLMain {
 
 	static Scanner sc = new Scanner(System.in);
-	List<Integer> list = new SLList<>();
+	List<Integer> list = new DLList<>();
 
 	private void insertFirst() {
 		System.out.println("Enter integer value to insert first");
@@ -47,7 +47,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		Main main = new Main();
+		DLMain main = new DLMain();
 		while (true) {
 			System.out.println("\n1. For insert first\n2. For insert last\n3. For delete first\n4."
 					+ " For delete last\n5. For get by index\n6. For size\n7. Print all data\n8.To insert at given index\n.9 Any key to exit");
